@@ -7,7 +7,6 @@ cask 'android-ndk-16b' do
   name 'Android NDK'
   homepage 'https://developer.android.com/ndk/index.html'
 
-  conflicts_with cask: 'crystax-ndk'
   conflicts_with cask: 'android-ndk'
 
   # shim script (https://github.com/caskroom/homebrew-cask/issues/18809)
