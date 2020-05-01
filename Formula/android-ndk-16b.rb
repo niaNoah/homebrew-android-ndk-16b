@@ -12,7 +12,7 @@ cask 'android-ndk-16b' do
   # shim script (https://github.com/caskroom/homebrew-cask/issues/18809)
   shimscript = "#{staged_path}/ndk_exec.sh"
   preflight do
-    FileUtils.ln_sf("#{staged_path}/android-ndk-r#{version}", "#{HOMEBREW_PREFIX}/share/android-ndk")
+    FileUtils.ln_sf("#{staged_path}/android-ndk-r#{version}", "#{HOMEBREW_PREFIX}/share/android-ndk-r16b")
 
     IO.write shimscript, <<~EOS
       #!/bin/bash
@@ -30,11 +30,11 @@ cask 'android-ndk-16b' do
   ].each { |link_name| binary shimscript, target: link_name }
 
   uninstall_postflight do
-    FileUtils.rm("#{HOMEBREW_PREFIX}/share/android-ndk")
+    FileUtils.rm("#{HOMEBREW_PREFIX}/share/android-ndk-r16b")
   end
 
   caveats <<~EOS
     You may want to add to your profile:
-       'export ANDROID_NDK_HOME="#{HOMEBREW_PREFIX}/share/android-ndk"'
+       'export ANDROID_NDK_HOME="#{HOMEBREW_PREFIX}/share/android-ndk-r16b"'
   EOS
 end
