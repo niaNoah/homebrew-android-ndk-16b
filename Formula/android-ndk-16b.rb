@@ -1,10 +1,10 @@
-cask 'android-ndk-16b' do
+class AndroidNdk16b < Formula
   version '16b'
   sha256 '9654a692ed97713e35154bfcacb0028fdc368128d636326f9644ed83eec5d88b'
 
   # dl.google.com/android/repository/android-ndk was verified as official when first introduced to the cask
   url "https://dl.google.com/android/repository/android-ndk-r#{version}-darwin-x86_64.zip"
-  name 'Android NDK'
+  name 'Android NDK r16b'
   homepage 'https://developer.android.com/ndk/index.html'
 
   conflicts_with cask: 'android-ndk'
